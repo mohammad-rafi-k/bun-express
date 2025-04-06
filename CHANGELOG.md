@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/yourusername/bun-express/compare/v1.0.3...v1.1.0) (2025-04-06)
+
+
+### ✨ Features
+
+* add proxy endpoint to fetch data from external URLs and handle requests ([49a08e7](https://github.com/yourusername/bun-express/commit/49a08e761b91b3c9466959491fb2598774589a1a))
+
 ### [1.0.3](https://github.com/yourusername/bun-express/compare/v1.0.2...v1.0.3) (2025-04-06)
 
 
