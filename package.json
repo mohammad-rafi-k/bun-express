@@ -1,5 +1,6 @@
 {
   "name": "bun-express",
+  "version": "1.0.1",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -7,6 +8,7 @@
     "@types/bun": "latest",
     "@types/express": "^5.0.1",
     "@types/supertest": "^6.0.3",
+    "standard-version": "^9.5.0",
     "supertest": "^7.1.0"
   },
   "peerDependencies": {
@@ -14,7 +16,11 @@
   },
   "scripts": {
     "dev": "bun run --watch index.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
