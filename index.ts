@@ -1,4 +1,5 @@
 import express from "express";
+import type { Request, Response } from "express";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -17,6 +18,18 @@ app.get("/health", (_, res) => {
         timestamp: new Date().toISOString(),
     });
 });
+
+type RequestHandler = (req: Request, res: Response) => Promise<void>;
+
+app.get("/proxy", (async (req: Request, res: Response) => {
+    let url = req.query.url as string;
+    if (!url) {
+        url = "https://jsonplaceholder.typicode.com/posts/1";
+    }
+    const response = await fetch(url);
+    const data = await response.json();
+    res.json(data);
+}) as RequestHandler);
 
 // Only start the server if this file is run directly
 if (import.meta.main) {
